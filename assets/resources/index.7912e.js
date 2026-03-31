@@ -1,0 +1,22 @@
+System.register("chunks:///_virtual/MultiNumberTexture.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var t,r,n,i,a,u,o,s,c,l,p,f,h,b,d;return{setters:[function(e){t=e.applyDecoratedDescriptor,r=e.inheritsLoose,n=e.initializerDefineProperty,i=e.assertThisInitialized,a=e.asyncToGenerator,u=e.regeneratorRuntime},function(e){o=e.cclegacy,s=e._decorator,c=e.resources,l=e.Prefab,p=e.Texture2D,f=e.Material,h=e.Component,b=e.instantiate,d=e.MeshRenderer}],execute:function(){var m,g,P,y,x,v;o._RF.push({},"cb0f7x0nJVPe6WrIQW1hDep","MultiNumberTexture",void 0);var M=s.ccclass,N=s.property;e("MultiNumberTexture",M("MultiNumberTexture")((P=t((g=function(e){function t(){for(var t,r=arguments.length,a=new Array(r),u=0;u<r;u++)a[u]=arguments[u];return t=e.call.apply(e,[this].concat(a))||this,n(t,"number",P,i(t)),n(t,"digitSpacing",y,i(t)),n(t,"texturePath",x,i(t)),n(t,"matPath",v,i(t)),t.prefabPath="3dfont/Plane",t.planePrefab=null,t.numDept=.004,t.digitNodes=[],t}r(t,e);var o=t.prototype;return o.start=function(){this.updateMultiNumber()},o.ChangeMoneyFormat=function(e,t){var r,n=[{value:1,symbol:""},{value:1e3,symbol:"K"}];for(r=n.length-1;r>0&&!(Math.abs(e)>=n[r].value);r--);var i=(e/=n[r].value).toString().replace(/\d+/,(function(e){return e.replace(/(\d)(?=(\d{3})+$)/g,(function(e){return e+","}))}));return i=i.replace(new RegExp("([0-9,]+.[0-9]{"+t+"})[0-9]*"),"$1")+n[r].symbol},o.setNum=function(e){this.number=this.ChangeMoneyFormat(e,3),this.updateMultiNumber()},o.updateMultiNumber=function(){var e=a(u().mark((function e(){var t,r,n,i,a,o,s,c,l;return u().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,this.loadPlanePrefab(this.prefabPath);case 2:if(this.planePrefab=e.sent,null!=this.planePrefab){e.next=6;break}return console.error("Plane 加载失败"),e.abrupt("return");case 6:if(this.digitNodes.forEach((function(e){return e.destroy()})),this.digitNodes.length=0,0!==(t=this.number.toString().split("")).length){e.next=11;break}return e.abrupt("return");case 11:r=-(t.length-1)*this.digitSpacing/2,n=0;case 13:if(!(n<t.length)){e.next=40;break}return"."==(i=t[n])&&(i="JUHAO"),a=i,(o=b(this.planePrefab)).name="digit_"+a,o.parent=this.node,o.setPosition(r+n*this.digitSpacing,0,this.numDept),(s=o.getComponent(d))||(s=o.addComponent(d)),e.prev=23,e.next=26,this.loadTextureAsync(""+this.texturePath+a+"/texture");case 26:return c=e.sent,e.next=29,this.loadMaterialAsync(c);case 29:l=e.sent,s.materials=[l],e.next=36;break;case 33:e.prev=33,e.t0=e.catch(23),console.error("数字 "+a+" 加载失败",e.t0);case 36:this.digitNodes.push(o);case 37:n++,e.next=13;break;case 40:case"end":return e.stop()}}),e,this,[[23,33]])})));return function(){return e.apply(this,arguments)}}(),o.loadPlanePrefab=function(e){return new Promise((function(t,r){c.load(e,l,(function(e,n){e?r(e):t(n)}))}))},o.loadTextureAsync=function(e){return new Promise((function(t,r){c.load(e,p,(function(e,n){e?r(e):t(n)}))}))},o.loadMaterialAsync=function(e){var t=this;return new Promise((function(r,n){c.load(t.matPath,f,(function(t,i){if(t)return console.error("加载材质失败"),void n(t);var a=new f;a.copy(i),a.setProperty("mainTexture",e),r(a)}))}))},o.onPropertyChanged=function(){this.updateMultiNumber()},t}(h)).prototype,"number",[N],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return"1"}}),y=t(g.prototype,"digitSpacing",[N],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return.013}}),x=t(g.prototype,"texturePath",[N],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return"3dfont/number/"}}),v=t(g.prototype,"matPath",[N],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return"3dfont/NumberMat"}}),m=g))||m);o._RF.pop()}}}));
+
+System.register("chunks:///_virtual/resources",["./MultiNumberTexture.ts"],(function(){return{setters:[null],execute:function(){}}}));
+
+(function(r) {
+  r('virtual:///prerequisite-imports/resources', 'chunks:///_virtual/resources'); 
+})(function(mid, cid) {
+    System.register(mid, [cid], function (_export, _context) {
+    return {
+        setters: [function(_m) {
+            var _exportObj = {};
+
+            for (var _key in _m) {
+              if (_key !== "default" && _key !== "__esModule") _exportObj[_key] = _m[_key];
+            }
+      
+            _export(_exportObj);
+        }],
+        execute: function () { }
+    };
+    });
+});
